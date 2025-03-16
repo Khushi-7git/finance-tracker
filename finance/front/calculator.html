@@ -1,0 +1,39 @@
+<!-- calculator.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles/calculator.css">
+</head>
+<body>
+    <header>
+        <h1>Finance Calculator</h1>
+        <nav>
+            <a href="/"><i class="fas fa-home"></i> Home</a> | <a href="front\finance.html">Budget Tracker</a> | <a href="/debt">Debt Tracker</a> | <a href="/learn">Learn</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Perform a Calculation</h2>
+        <form method="POST">
+            <label for="amount1">Amount 1:</label>
+            <input type="number" name="amount1" required>
+            <label for="amount2">Amount 2:</label>
+            <input type="number" name="amount2" required>
+            <label for="operation">Operation:</label>
+            <select name="operation">
+                <option value="add">Add</option>
+                <option value="subtract">Subtract</option>
+                <option value="multiply">Multiply</option>
+                <option value="divide">Divide</option>
+            </select>
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result is not none %}
+        <h3>Result: {{ result }}</h3>
+        {% endif %}
+    </main>
+</body>
+</html>
