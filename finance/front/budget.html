@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/budget.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="account-icon">
+            <a href="/login"><i class="fas fa-user-circle"></i></a>
+        </div>
+        <h1>Budget Tracker</h1>
+        <nav>
+            <ul>
+                <div class="sparkle sparkle-1"></div>
+                <div class="sparkle sparkle-2"></div>
+                <div class="sparkle sparkle-3"></div>
+    
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <i class="fa-solid fa-house"></i> 
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fa-solid fa-bars"></i></a>
+                    <div class="dropdown-content">
+                        <a href="front\finance.html">Budget Tracker</a>
+                        <a href="/debt">Debt Tracker</a>
+                        <a href="/calculator">Calculator</a>
+                        <a href="/learn">Learn Finance</a>
+                        <a href="/stock">Learn Finance</a>
+
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Set Your Budget</h2>
+        <form method="POST" action ="{{url_for('budget')}}">
+            <label for="target">Set Your Budget Target:</label>
+            <input type="number" id="target" name="target" required>
+            <select name="period">
+                <option value="monthly">Monthly</option>
+                <option value="yearly">Yearly</option>
+                <option value="daily">Daily</option>
+            </select>
+            <button type="submit">Set Budget</button>
+        </form>
+
+        <h3>Your Budgets</h3>
+        <ul>
+            {% for budget in budgets %}
+                <li>Target: {{ budget[1] }}, Period: {{ budget[2] }}</li>
+            {% else %}
+                <li>No budgets set yet.</li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
