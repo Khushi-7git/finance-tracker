@@ -18,7 +18,10 @@ Users can view their set budgets and track their progress.
 5. Educational Content
 A page offering basic financial educational content such as how to manage personal finance, stock market basics, budgeting tips, etc.
 
-6. Future Features (Planned)
+6. Stock tracker
+A page offering user to real time stock price of specific company. 
+
+8. Future Features (Planned)
 1.Login Page & Authentication: A secure login system where users can create an account, log in, and manage their personal financial data.
 2.Multiple User Accounts: Support for multiple users to track and manage their own financial data securely.
 3.Password Protection: Password hashing and secure user authentication to ensure privacy.
@@ -50,6 +53,8 @@ The application will store this data, allowing users to track and adjust their b
 The Learn Finance page provides educational resources on topics like the stock market and personal finance.
 Future Enhancements
 User Authentication
+
+6.Stock Tracker: Allow users to input a specific company's stock symbol to get real-time stock prices. This tool provides detailed insights, including the current price, opening, closing, high, and low prices, as well as trading volume, helping users make informed investment decisions."
 
 A login system will be added to ensure that users' financial data remains secure. The user will be required to create an account and log in with a username and password. Passwords will be securely hashed for privacy.
 Multiple User Accounts
